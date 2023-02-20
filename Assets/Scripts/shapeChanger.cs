@@ -9,7 +9,8 @@ public class shapeChanger : MonoBehaviour
     public GameObject pentagon;
     //public GameObject hexagon;
     //public GameObject octagon;
-    float countdown = 3f;
+    public float countdown = 10f;
+    int pastShape;
     // int rounds = 0;
     // float initialCountdown = 17f;
 
@@ -18,6 +19,7 @@ public class shapeChanger : MonoBehaviour
     {
         // rounds = 1;
         square.SetActive(true);
+        pastShape = 2;
     }
 
     // Update is called once per frame
@@ -33,16 +35,24 @@ public class shapeChanger : MonoBehaviour
         {
             // countdown = initialCountdown - rounds;
             int shape = Random.Range(1, 3);
+            if (pastShape == 1)
+            {
+                triangle.SetActive(false);
+            }
+            else if (pastShape == 2)
+            {
+                square.SetActive(false);
+            }
+            else if (pastShape == 3)
+            {
+                pentagon.SetActive(false);
+            }
+            pastShape = shape;
+
             if (countdown != 1)
             {
                 countdown -= 1;
             }
-
-            triangle.SetActive(false);
-            square.SetActive(false);
-            pentagon.SetActive(false);
-            //hexagon.SetActive(false);
-            //octagon.SetActive(false);
 
             if (shape == 1)
             {
