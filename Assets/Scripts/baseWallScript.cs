@@ -5,7 +5,14 @@ public class baseWallScript : MonoBehaviour
 {
     public GameObject objectToShow;
     public AudioSource sound;
-    public shapeChanger shapeBottomWall;
+    //public shapeChanger shapeBottomWall;
+    //int round;
+    public shapeChanger shape;
+
+    private void Start()
+    {
+        //round = 1;
+    }
 
     private void Update()
     {
@@ -19,9 +26,9 @@ public class baseWallScript : MonoBehaviour
     private IEnumerator show()
     {
         //objectToShow.SetActive(true);
-        shapeBottomWall.bottomWallToShow.SetActive(true);
+        shape.bottomWallToShow.SetActive(true);
         yield return new WaitForSeconds(.16f);
         //objectToShow.SetActive(false);
-        shapeBottomWall.bottomWallToShow.SetActive(false);
+        shape.bottomWallToShow.SetActive(false);
     }
 }
