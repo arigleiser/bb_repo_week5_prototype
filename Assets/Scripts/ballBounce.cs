@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ballBounce : MonoBehaviour
 {
+    public AudioSource bounceSound;
     Rigidbody2D rb;
     Vector3 lastVelocity;
 
@@ -21,6 +22,7 @@ public class ballBounce : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        bounceSound.Play();
         var speed = lastVelocity.magnitude;
         var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
         rb.velocity = direction * Mathf.Max(speed, 0f);
