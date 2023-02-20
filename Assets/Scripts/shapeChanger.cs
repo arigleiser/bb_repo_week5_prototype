@@ -6,12 +6,15 @@ public class shapeChanger : MonoBehaviour
 {
     int round = 0;
     public GameObject triangle;
+    public GameObject triangleBottomWall;
     public GameObject square;
+    public GameObject squareBottomWall;
     public GameObject pentagon;
+    public GameObject pentagonBottonWall;
+    public GameObject bottomWallToShow;
     //public GameObject hexagon;
     //public GameObject octagon;
     public float countdown = 10f;
-    int pastShape;
     // int rounds = 0;
     // float initialCountdown = 17f;
 
@@ -20,7 +23,6 @@ public class shapeChanger : MonoBehaviour
     {
         // rounds = 1;
         square.SetActive(true);
-        pastShape = 2;
         round += 1;
     }
 
@@ -38,18 +40,21 @@ public class shapeChanger : MonoBehaviour
             countdown = 3f;
             if (round % 3 == 0)
             {
+                bottomWallToShow = squareBottomWall;
                 pentagon.SetActive(false);
                 square.SetActive(true);
                 round += 1;
             }
             else if (round % 2 == 0)
             {
+                bottomWallToShow = pentagonBottonWall;
                 triangle.SetActive(false);
                 pentagon.SetActive(true);
                 round += 1;
             }
             else
             {
+                bottomWallToShow = triangleBottomWall;
                 square.SetActive(false);
                 triangle.SetActive(true);
                 round += 1;
