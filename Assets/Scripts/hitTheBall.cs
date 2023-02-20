@@ -5,6 +5,7 @@ using UnityEngine;
 public class hitTheBall : MonoBehaviour
 {
     int round;
+    public GameObject ball;
     public shapeChanger shape;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class hitTheBall : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        ball.GetComponent<Rigidbody2D>().AddForce(new Vector3(20, 20, 0));
         if (round % 3 == 0)
         {
             //square
