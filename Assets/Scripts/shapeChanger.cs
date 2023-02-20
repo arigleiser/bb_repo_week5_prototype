@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class shapeChanger : MonoBehaviour
 {
+    int round = 0;
     public GameObject triangle;
     public GameObject square;
     public GameObject pentagon;
@@ -20,6 +21,7 @@ public class shapeChanger : MonoBehaviour
         // rounds = 1;
         square.SetActive(true);
         pastShape = 2;
+        round += 1;
     }
 
     // Update is called once per frame
@@ -33,47 +35,25 @@ public class shapeChanger : MonoBehaviour
 
         else if (countdown <= 0)
         {
-            // countdown = initialCountdown - rounds;
-            int shape = Random.Range(1, 3);
-            if (pastShape == 1)
-            {
-                triangle.SetActive(false);
-            }
-            else if (pastShape == 2)
-            {
-                square.SetActive(false);
-            }
-            else if (pastShape == 3)
+            countdown = 3f;
+            if (round % 3 == 0)
             {
                 pentagon.SetActive(false);
-            }
-            pastShape = shape;
-
-            if (countdown != 1)
-            {
-                countdown -= 1;
-            }
-
-            if (shape == 1)
-            {
-                triangle.SetActive(true);
-            }
-            else if (shape == 2)
-            {
                 square.SetActive(true);
+                round += 1;
             }
-            else if (shape == 3)
+            else if (round % 2 == 0)
             {
+                triangle.SetActive(false);
                 pentagon.SetActive(true);
+                round += 1;
             }
-            //else if (shape == 4)
-            //{
-            //    hexagon.SetActive(true);
-            //}
-            //else if (shape == 5)
-            //{
-            //    octagon.SetActive(true);
-            //}
+            else
+            {
+                square.SetActive(false);
+                triangle.SetActive(true);
+                round += 1;
+            }
         }
     }
 }
