@@ -14,6 +14,7 @@ public class shapeChanger : MonoBehaviour
     public GameObject bottomWallToShow;
     public ballMove ballSpeed;
     public float ballSpeedInit;
+    // public Camera mainCam;
     //public GameObject hexagon;
     //public GameObject octagon;
     public float countdown = 5f;
@@ -32,7 +33,7 @@ public class shapeChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (countdown > 0)
+        if (countdown > 0 && countdown != 2)
         {
             countdown -= Time.deltaTime;
        
@@ -40,7 +41,7 @@ public class shapeChanger : MonoBehaviour
 
         else if (countdown <= 0)
         {
-            countdown = Random.Range(1, 10);
+            countdown = Random.Range(2, 10);
             if (round % 3 == 0)
             {
                 bottomWallToShow = squareBottomWall;
