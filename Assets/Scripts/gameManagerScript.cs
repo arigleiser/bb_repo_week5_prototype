@@ -27,6 +27,10 @@ public class gameManagerScript : MonoBehaviour
         {
             gameOver();
         }
+        else if (ball.transform.position.y >= 4)
+        {
+            gameOver();
+        }
     }
 
     public void gameOver()

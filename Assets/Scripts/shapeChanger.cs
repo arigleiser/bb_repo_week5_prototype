@@ -43,7 +43,7 @@ public class shapeChanger : MonoBehaviour
                 bottomWallToShow = squareBottomWall;
                 pentagon.SetActive(false);
                 square.SetActive(true);
-                round += 1;
+                round = 1;
             }
             else if (round % 2 == 0)
             {

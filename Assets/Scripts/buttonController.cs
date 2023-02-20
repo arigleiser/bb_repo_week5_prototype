@@ -21,9 +21,6 @@ public class buttonController : MonoBehaviour
 
     public void Restart()
     {
-        //if(Time.timeScale == 1)
-        //{
-        //}
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
