@@ -20,7 +20,7 @@ public class baseWallScript : MonoBehaviour
     {
         //objectToShow.SetActive(true);
         shapeBottomWall.bottomWallToShow.SetActive(true);
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.16f);
         //objectToShow.SetActive(false);
         shapeBottomWall.bottomWallToShow.SetActive(false);
     }

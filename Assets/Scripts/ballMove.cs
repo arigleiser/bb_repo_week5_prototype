@@ -5,7 +5,8 @@ using UnityEngine;
 public class ballMove : MonoBehaviour
 {
     Rigidbody2D rb;
-    private float speed = 400;
+    public float speed = 200;
+    private float countdown = 3f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,17 @@ public class ballMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (countdown > 0)
+        {
+            countdown -= Time.deltaTime;
+
+        }
+
+        else if (countdown <= 0)
+        {
+            countdown = 3f;
+            speed += 10;
+            rb.AddForce(new Vector2(20 * Time.deltaTime * speed, 20 * Time.deltaTime * speed));
+        }
     }
 }
