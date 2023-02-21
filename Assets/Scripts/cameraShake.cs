@@ -5,6 +5,7 @@ public class cameraShake : MonoBehaviour
     // Camera Information
     public Transform cameraTransform;
     private Vector3 orignalCameraPos;
+    public Camera mainCam;
 
     // Shake Parameters
     public float shakeDuration = 2f;
@@ -39,6 +40,7 @@ public class cameraShake : MonoBehaviour
     {
         canShake = true;
         _shakeTimer = shakeDuration;
+        mainCam.transform.Rotate(new Vector3(0, 0, 90));
     }
 
     public void StartCameraShakeEffect()
