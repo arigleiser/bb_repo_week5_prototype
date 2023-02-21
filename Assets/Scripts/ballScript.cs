@@ -12,6 +12,7 @@ public class ballScript : MonoBehaviour
     public AudioSource bounceSound;
     public Rigidbody2D rb;
     Vector3 lastVelocity;
+    public bool isAlive;
 
     void Start()
     {
@@ -19,10 +20,16 @@ public class ballScript : MonoBehaviour
         speed = initialSpeed;
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(60 * Time.deltaTime * speed, 60 * Time.deltaTime * speed));
+        isAlive = true;
     }
 
     void Update()
     {
+        if (gameObject.transform.position.y <= -3.4)
+        {
+            isAlive = false;
+        }
+
         lastVelocity = rb.velocity;
         if (tempcountdown > 0)
         {

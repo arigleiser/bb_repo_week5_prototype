@@ -40,7 +40,7 @@ public class cameraShake : MonoBehaviour
     {
         canShake = true;
         _shakeTimer = shakeDuration;
-        mainCam.transform.Rotate(new Vector3(0, 0, 90));
+        // mainCam.transform.Rotate(new Vector3(0, 0, 90));
     }
 
     public void StartCameraShakeEffect()
