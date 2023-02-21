@@ -8,6 +8,7 @@ public class obstacleScript : MonoBehaviour
     public float xMax;
     public float yMin;
     public float yMax;
+    public cameraShake cs;
     private Vector3 startPos;
 
     void Start()
@@ -26,6 +27,14 @@ public class obstacleScript : MonoBehaviour
         float y = Mathf.Clamp(worldPosition.y, startPos.y + yMin, startPos.y + yMax);
 
         transform.position = new Vector3(x, y, transform.position.z);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Player")
+        {
+            cs.ShakeCamera();
+        }
     }
 }
 

@@ -13,7 +13,7 @@ public class ballScript : MonoBehaviour
     public AudioSource bounceSound;
     public Rigidbody2D rb;
     Vector3 lastVelocity;
-    public cameraShake cs;
+    // public cameraShake cs;
 
 
     public TMP_Text disvar;
@@ -74,7 +74,7 @@ public class ballScript : MonoBehaviour
 
         if (collision.transform.tag == "obstacle")
         {
-            cs.ShakeCamera();
+            // cs.ShakeCamera();
             scoreText.text = "";
             gameOver();
         }
