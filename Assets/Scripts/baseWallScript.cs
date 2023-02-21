@@ -5,15 +5,12 @@ public class baseWallScript : MonoBehaviour
 {
     public GameObject objectToShow;
     public AudioSource sound;
+
     //public shapeChanger shapeBottomWall;
     //int round;
-    public shapeChanger shape;
+    //public shapeChanger shape;
 
-    private void Start()
-    {
-        //round = 1;
-    }
-
+   
     private void Update()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -25,10 +22,11 @@ public class baseWallScript : MonoBehaviour
 
     private IEnumerator show()
     {
-        //objectToShow.SetActive(true);
-        shape.bottomWallToShow.SetActive(true);
+        objectToShow.SetActive(true);
         yield return new WaitForSeconds(.16f);
-        //objectToShow.SetActive(false);
-        shape.bottomWallToShow.SetActive(false);
+        objectToShow.SetActive(false);
+
+        //shape.bottomWallToShow.SetActive(true);
+        //shape.bottomWallToShow.SetActive(false);
     }
 }

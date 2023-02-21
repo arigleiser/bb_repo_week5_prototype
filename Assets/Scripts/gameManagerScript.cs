@@ -13,12 +13,6 @@ public class gameManagerScript : MonoBehaviour
 
     public TMP_Text disvar;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -37,7 +31,7 @@ public class gameManagerScript : MonoBehaviour
     {
         disvar.text = "Game Over!";
         restartButton.SetActive(true);
-        quitButton.SetActive(true);
+        //quitButton.SetActive(true);
         //Time.timeScale = 1;
     }
 

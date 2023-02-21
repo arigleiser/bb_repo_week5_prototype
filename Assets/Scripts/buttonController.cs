@@ -6,24 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class buttonController : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public Rigidbody2D rb;
+    //public void Restart()
+    //{
+    //    Time.timeScale = 1;
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    //}
 
     public void Restart()
     {
+        PlayerPrefs.DeleteAll();
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
 
     public void Quit()
     {
