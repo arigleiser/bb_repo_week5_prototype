@@ -13,12 +13,12 @@ public class ballScript : MonoBehaviour
     public AudioSource bounceSound;
     public Rigidbody2D rb;
     Vector3 lastVelocity;
+    public cameraShake cs;
 
 
     public TMP_Text disvar;
 
     public gameOverScreen gameOverScreen;
-
     public int score;
     public TextMeshProUGUI scoreText;
 
@@ -74,6 +74,7 @@ public class ballScript : MonoBehaviour
 
         if (collision.transform.tag == "obstacle")
         {
+            cs.ShakeCamera();
             scoreText.text = "";
             gameOver();
         }

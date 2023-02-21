@@ -9,6 +9,10 @@ public class shakeScript : MonoBehaviour
  
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        cs.ShakeCamera();
+        if (collision.transform.tag == "obstacle")
+        {
+            cs.ShakeCamera();
+        }
+      
     }
 }
