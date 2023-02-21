@@ -11,6 +11,8 @@ public class playerScript : MonoBehaviour
     public gameOverScreen gameOverScreen;
     public int score;
     public TextMeshProUGUI scoreText;
+    public AudioSource bounceSound;
+    public AudioSource loseSound;
 
 
     public void gameOver()
@@ -26,7 +28,7 @@ public class playerScript : MonoBehaviour
     void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
-        if (gameObject.transform.position.y <= -3.4)
+        if (gameObject.transform.position.y <= -3.55)
         {
             scoreText.text = "";
             gameOver();
@@ -42,7 +44,7 @@ public class playerScript : MonoBehaviour
     {
         Vector3 newDirection = Vector3.Reflect(direction, collision.contacts[0].normal);
         direction = newDirection.normalized;
-
+        
         if (collision.transform.tag == "bottomWall")
         {
             score += 1;
@@ -51,8 +53,13 @@ public class playerScript : MonoBehaviour
 
         if (collision.transform.tag == "obstacle")
         {
+            loseSound.Play();
             scoreText.text = "";
             gameOver();
+        }
+        else
+        {
+            bounceSound.Play();
         }
     }
 }
