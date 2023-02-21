@@ -31,7 +31,7 @@ public class playerScript : MonoBehaviour
         transform.position += direction * speed * Time.deltaTime;
 
         
-        if (gameObject.transform.position.y <= -3.55 && !hasPlayedSound)
+        if (gameObject.transform.position.y <= -3 && !hasPlayedSound)
         {
             loseSound.Play();
             hasPlayedSound = true;

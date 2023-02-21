@@ -18,13 +18,11 @@ public class obstacleScript : MonoBehaviour
 
     void Update()
     {
-        Vector3 mousePosition = Input.mousePosition; 
-        mousePosition.z = Camera.main.transform.position.z - transform.position.z; 
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition); 
-
-        float x = Mathf.Clamp(worldPosition.x, startPos.x + xMin, startPos.x + xMax);
-        float y = Mathf.Clamp(worldPosition.y, startPos.y + yMin, startPos.y + yMax);
-
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition.z = Camera.main.transform.position.z - transform.position.z;
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        float x = Mathf.Clamp(worldPosition.x, xMin, xMax);
+        float y = Mathf.Clamp(worldPosition.y, yMin, yMax);
         transform.position = new Vector3(x, y, transform.position.z);
     }
 
