@@ -60,7 +60,10 @@ public class ballScript : MonoBehaviour
         bounceSound.Play();
         var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
         rb.velocity = direction * lastVelocity.magnitude;
-
+        if (collision.transform.tag == "bottomWall")
+        {
+            rb.AddForce(new Vector2(5 * Time.deltaTime * speed, 5 * Time.deltaTime * speed));
+        }
     }
 }
 
