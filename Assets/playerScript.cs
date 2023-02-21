@@ -20,7 +20,7 @@ public class playerScript : MonoBehaviour
 
     void Start()
     {
-        direction = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0).normalized;
+        direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f).normalized;
     }
 
     void Update()
