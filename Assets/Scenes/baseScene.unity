@@ -684,6 +684,7 @@ MonoBehaviour:
   countdown: 5
   tempcountdown: 0
   bounceSound: {fileID: 196551567}
+  score: 0
   scoreText: {fileID: 1743473488}
   rb: {fileID: 196551569}
   restartButton: {fileID: 884596673}
@@ -3103,6 +3104,7 @@ GameObject:
   - component: {fileID: 1536480839}
   - component: {fileID: 1536480838}
   - component: {fileID: 1536480842}
+  - component: {fileID: 1536480843}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3225,6 +3227,20 @@ MonoBehaviour:
   mainCam: {fileID: 1536480840}
   shakeDuration: 0.3
   shakeAmount: 0.4
+--- !u!114 &1536480843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536480837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e80a169ba40f94fdc9dca09acad88c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCam: {fileID: 1536480840}
+  ball: {fileID: 196551566}
 --- !u!1 &1544435944
 GameObject:
   m_ObjectHideFlags: 0
