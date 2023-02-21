@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class shakeScript : MonoBehaviour
 {
-    public cameraShake cs;
+    // public cameraShake cs;
 
  
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        cs.ShakeCamera();
+        // cs.ShakeCamera();
     }
 }
