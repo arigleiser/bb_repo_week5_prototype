@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ballScript : MonoBehaviour
 {
@@ -12,22 +13,32 @@ public class ballScript : MonoBehaviour
     public AudioSource bounceSound;
     public Rigidbody2D rb;
     Vector3 lastVelocity;
-    public bool isAlive;
+    // public bool isAlive;
+    public GameObject restartButton;
+    public GameObject quitButton;
+    // public GameObject ball;
+    // public ballScript bs;
+    //public loseIfTouchFloor floor;
+
+    public TMP_Text disvar;
 
     void Start()
     {
+        // disvar.text = "HELLOOO";
         tempcountdown = countdown;
         speed = initialSpeed;
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(60 * Time.deltaTime * speed, 60 * Time.deltaTime * speed));
-        isAlive = true;
+        // isAlive = true;
     }
 
     void Update()
     {
         if (gameObject.transform.position.y <= -3.4)
         {
-            isAlive = false;
+            disvar.text = "Game Over!";
+            restartButton.SetActive(true);
+            quitButton.SetActive(true);
         }
 
         lastVelocity = rb.velocity;

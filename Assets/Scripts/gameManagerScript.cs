@@ -17,10 +17,10 @@ public class gameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bs.isAlive == false)
-        {
-            gameOver();
-        }
+        //if (bs.isAlive == false)
+        //{
+        //    gameOver();
+        //}
         // Debug.Log(playerScript.upspeed);
         //if (ball.transform.position.y <= -3.4)
         //{

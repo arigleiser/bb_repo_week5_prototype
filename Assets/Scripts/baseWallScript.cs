@@ -22,7 +22,7 @@ public class baseWallScript : MonoBehaviour
             sound.Play();
         }
 
-        if (count % 5 == 0)
+        if (count % 8 == 0)
         {
             count = 1;
             Instantiate(ball, new Vector3(0, 0, 0), Quaternion.identity);
