@@ -3156,6 +3156,7 @@ MonoBehaviour:
   xMax: 5.5
   yMin: -4.5
   yMax: 1
+  cs: {fileID: 1536480842}
 --- !u!58 &1197676575
 CircleCollider2D:
   m_ObjectHideFlags: 0
