@@ -50,8 +50,9 @@ public class playerScript : MonoBehaviour
         Vector3 newDirection = Vector3.Reflect(direction, collision.contacts[0].normal);
         direction = newDirection.normalized;
         
-        if (collision.transform.tag == "bottomWall")
+        if (collision.transform.tag == "bottomWall" && !hasPlayedSound)
         {
+            hasPlayedSound = true;
             score += 1;
             scoreText.text = score.ToString() + " POINTS";
         }
