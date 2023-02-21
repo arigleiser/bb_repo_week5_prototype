@@ -13,7 +13,7 @@ public class playerScript : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public AudioSource bounceSound;
     public AudioSource loseSound;
-
+    bool hasPlayedSound = false;
 
     public void gameOver()
     {
@@ -22,14 +22,19 @@ public class playerScript : MonoBehaviour
 
     void Start()
     {
-        direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f).normalized;
+        float randomX = Random.value < 0.5f ? -1f : 1f; 
+        direction = new Vector3(randomX, -1f, 0f).normalized;
     }
 
     void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
-        if (gameObject.transform.position.y <= -3.55)
+
+        
+        if (gameObject.transform.position.y <= -3.55 && !hasPlayedSound)
         {
+            loseSound.Play();
+            hasPlayedSound = true;
             scoreText.text = "";
             gameOver();
         }
