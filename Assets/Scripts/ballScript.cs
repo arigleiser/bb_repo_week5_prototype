@@ -5,80 +5,87 @@ using TMPro;
 
 public class ballScript : MonoBehaviour
 {
-    public float initialSpeed;
-    public float speed;
-    public float speedIncreaseRate;
-    public float countdown;
-    public float tempcountdown;
-    public AudioSource bounceSound;
-    public Rigidbody2D rb;
-    Vector3 lastVelocity;
-    // public cameraShake cs;
+    //    public float initialSpeed;
+    //    public float speed;
+    //    public float speedIncreaseRate;
+    //    public float countdown;
+    //    public float tempcountdown;
+    //    public AudioSource bounceSound;
+    //    public Rigidbody2D rb;
+    //    Vector3 lastVelocity;
+    //<<<<<<< HEAD
+    //    // public cameraShake cs;
+    //=======
+    //>>>>>>> parent of 46441a1 (player code)
 
 
-    public TMP_Text disvar;
+    //    public TMP_Text disvar;
 
-    public gameOverScreen gameOverScreen;
-    public int score;
-    public TextMeshProUGUI scoreText;
+    //    public gameOverScreen gameOverScreen;
 
-    public void gameOver()
-    {
-        gameOverScreen.SetUp(score);
-    }
+    //    public int score;
+    //    public TextMeshProUGUI scoreText;
 
-    void Start()
-    {
-        tempcountdown = countdown;
-        speed = initialSpeed;
-        rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(60 * Time.deltaTime * speed, 60 * Time.deltaTime * speed));
-        score = 0;
-        scoreText.text = score.ToString() + " POINTS";
-    }
+    //    public void gameOver()
+    //    {
+    //        gameOverScreen.SetUp(score);
+    //    }
 
-    void Update()
-    {
-        if (gameObject.transform.position.y <= -3.4)
-        {
-            scoreText.text = "";
-            gameOver();
-        }
+    //    void Start()
+    //    {
+    //        tempcountdown = countdown;
+    //        speed = initialSpeed;
+    //        rb = GetComponent<Rigidbody2D>();
+    //        rb.AddForce(new Vector2(60 * Time.deltaTime * speed, 60 * Time.deltaTime * speed));
+    //        score = 0;
+    //        scoreText.text = score.ToString() + " POINTS";
+    //    }
 
-        lastVelocity = rb.velocity;
-        if (tempcountdown > 0)
-        {
-            tempcountdown -= Time.deltaTime;
-        }
+    //    void Update()
+    //    {
+    //        if (gameObject.transform.position.y <= -3.4)
+    //        {
+    //            scoreText.text = "";
+    //            gameOver();
+    //        }
 
-        else if (tempcountdown <= 0)
-        {
-            tempcountdown = countdown;
-            speed += speedIncreaseRate;
-            rb.AddForce(new Vector2(20 * Time.deltaTime * speed, 20 * Time.deltaTime * speed));
-        }
-    }
+    //        lastVelocity = rb.velocity;
+    //        if (tempcountdown > 0)
+    //        {
+    //            tempcountdown -= Time.deltaTime;
+    //        }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        bounceSound.Play();
-        var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
-        rb.velocity = direction * lastVelocity.magnitude;
+    //        else if (tempcountdown <= 0)
+    //        {
+    //            tempcountdown = countdown;
+    //            speed += speedIncreaseRate;
+    //            rb.AddForce(new Vector2(20 * Time.deltaTime * speed, 20 * Time.deltaTime * speed));
+    //        }
+    //    }
 
-        if (collision.transform.tag == "bottomWall")
-        {
-            rb.AddForce(new Vector2(2 * Time.deltaTime * speed, 2 * Time.deltaTime * speed));
-            score += 1;
-            scoreText.text = score.ToString() + " POINTS";
-        }
+    //    private void OnCollisionEnter2D(Collision2D collision)
+    //    {
+    //        bounceSound.Play();
+    //        var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
+    //        rb.velocity = direction * lastVelocity.magnitude;
 
-        if (collision.transform.tag == "obstacle")
-        {
-            // cs.ShakeCamera();
-            scoreText.text = "";
-            gameOver();
-        }
-    }
+    //        if (collision.transform.tag == "bottomWall")
+    //        {
+    //            rb.AddForce(new Vector2(2 * Time.deltaTime * speed, 2 * Time.deltaTime * speed));
+    //            score += 1;
+    //            scoreText.text = score.ToString() + " POINTS";
+    //        }
+
+    //        if (collision.transform.tag == "obstacle")
+    //        {
+    //<<<<<<< HEAD
+    //            // cs.ShakeCamera();
+    //=======
+    //>>>>>>> parent of 46441a1 (player code)
+    //            scoreText.text = "";
+    //            gameOver();
+    //        }
+    //    }
 }
 
 

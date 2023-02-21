@@ -16,7 +16,6 @@ public class obstacleScript : MonoBehaviour
         startPos = transform.position; 
     }
 
-
     void Update()
     {
         Vector3 mousePosition = Input.mousePosition; 
