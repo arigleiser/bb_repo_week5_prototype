@@ -11,6 +11,8 @@ public class ballScript : MonoBehaviour
     public float countdown;
     public float tempcountdown;
     public AudioSource bounceSound;
+    public int score;
+    public TMP_Text scoreText;
     public Rigidbody2D rb;
     Vector3 lastVelocity;
     // public bool isAlive;
@@ -30,6 +32,8 @@ public class ballScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(60 * Time.deltaTime * speed, 60 * Time.deltaTime * speed));
         // isAlive = true;
+        score = 0;
+        scoreText.text = "Score: " + score.ToString();
     }
 
     void Update()
@@ -62,7 +66,9 @@ public class ballScript : MonoBehaviour
         rb.velocity = direction * lastVelocity.magnitude;
         if (collision.transform.tag == "bottomWall")
         {
-            rb.AddForce(new Vector2(5 * Time.deltaTime * speed, 5 * Time.deltaTime * speed));
+            rb.AddForce(new Vector2(2 * Time.deltaTime * speed, 2 * Time.deltaTime * speed));
+            score += 1;
+            scoreText.text = "Score: " + score.ToString();
         }
     }
 }
