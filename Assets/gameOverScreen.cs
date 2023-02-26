@@ -16,7 +16,6 @@ public class gameOverScreen : MonoBehaviour
     public void restartButton(int score)
     {
         SceneManager.LoadScene("baseScene");
-
     }
 
 }

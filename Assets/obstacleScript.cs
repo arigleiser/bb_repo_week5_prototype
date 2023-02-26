@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class obstacleScript : MonoBehaviour
 {
-    public float xMin;
-    public float xMax;
-    public float yMin;
-    public float yMax;
+    private float xMin;
+    private float xMax;
+    private float yMin;
+    private float yMax;
     public cameraShake cs;
     private Vector3 startPos;
 
     void Start()
     {
+            xMin = -2.7f;
+            xMax = 2.7f;
+            yMin = -2.7f;
+            yMax = 2.5f;
         startPos = transform.position; 
     }
 

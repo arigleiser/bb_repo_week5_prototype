@@ -13,7 +13,7 @@ public class playerScript : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public AudioSource bounceSound;
     public AudioSource loseSound;
-    bool hasPlayedSound = false;
+    bool hasPlayedSound;
 
     public void gameOver()
     {
@@ -24,6 +24,7 @@ public class playerScript : MonoBehaviour
     {
         float randomX = Random.value < 0.5f ? -1f : 1f; 
         direction = new Vector3(randomX, -1f, 0f).normalized;
+        hasPlayedSound = false;
     }
 
     void Update()
@@ -52,7 +53,6 @@ public class playerScript : MonoBehaviour
         
         if (collision.transform.tag == "bottomWall" && !hasPlayedSound)
         {
-            hasPlayedSound = true;
             score += 1;
             scoreText.text = score.ToString() + " POINTS";
         }

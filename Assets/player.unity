@@ -3474,10 +3474,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fdfeef2dc494ffa951ba3aceb97da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: -2.7
-  xMax: 2.7
-  yMin: -2.7
-  yMax: 2.5
   cs: {fileID: 1536480842}
 --- !u!58 &1197676575
 CircleCollider2D:
@@ -4612,8 +4608,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.4
-  m_fontSizeBase: 35.4
+  m_fontSize: 37
+  m_fontSizeBase: 37
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
